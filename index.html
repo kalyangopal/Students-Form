@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🧑‍🎓Student Details Entry</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SheetJS -->
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-4">
+
+    <!-- Header -->
+    <h1 class="text-center text-3xl font-bold text-gray-800 mb-2">
+        Apollo Computer Education
+    </h1>
+
+    <h2 class="text-center text-xl font-semibold text-blue-600 mb-8">
+        Student Details Entry
+    </h2>
+
+    <!-- Form Container -->
+    <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-6">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <div>
+                <label class="font-semibold">Student Name</label>
+                <input id="name" type="text" class="w-full p-2 border rounded-md" placeholder="Enter student name">
+            </div>
+
+            <div>
+                <label class="font-semibold">Course</label>
+                <input id="courses" type="text" class="w-full p-2 border rounded-md" placeholder="Enter course">
+            </div>
+
+            <div>
+                <label class="font-semibold">Mobile Number</label>
+                <input id="mobileNumber" type="number" class="w-full p-2 border rounded-md" placeholder="Enter mobile number">
+            </div>
+
+              <div>
+                <label class="font-semibold">Course Joining Date</label>
+                <input type="date" id="joiningDate"  class="w-full p-2 border rounded-md">
+            </div>
+            <div >
+                <label class="font-semibold">Course Completed Date</label>
+                <input type="date" id="completedDate"  class="w-full p-2 border rounded-md">
+            </div>
+
+            <div>
+                <label class="font-semibold">Payment-1 </label>
+                <input id="Payment1" type="number" class="w-full p-2 border rounded-md" placeholder="Enter First Payment">
+            </div>
+
+            <div>
+                <label class="font-semibold">Payment-2</label>
+                <input id="Payment2" type="number" class="w-full p-2 border rounded-md" placeholder="Enter Second Paymrnt">
+            </div>
+
+            <div>
+                <label class="font-semibold">Payment-3</label>
+                <input id="Payment3" type="number" class="w-full p-2 border rounded-md" placeholder="Enter Thired Payment">
+            </div>
+
+           
+
+            <div>
+                <label class="font-semibold">Total Fees</label>
+                <input id="totalFees" type="number" class="w-full p-2 border rounded-md" placeholder="Enter total fees">
+            </div>
+
+             <div>
+                <label class="font-semibold">Balance Fees</label>
+                <input id="Balance" type="text" class="w-full p-2 border rounded-md" placeholder="Enter balance">
+            </div>
+
+            <div>
+                <label class="font-semibold">Completion Status</label>
+                <div class="flex gap-4 mt-2">
+                    <label><input type="radio" name="status" value="Completed"> Completed</label>
+                    <label><input type="radio" name="status" value="Not Completed"> Not Completed</label>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="addStudent()" 
+            class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg w-full">
+            Add Student
+        </button>
+    </div>
+
+    <!-- Table -->
+    <div class="mt-8 overflow-x-auto">
+        <table id="studentTable" class="w-full border-collapse bg-white shadow-lg rounded-lg">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="py-2 px-3">Sl No.</th>
+                    <th class="py-2 px-3">Name</th>
+                    <th class="py-2 px-3">Courses</th>
+                    <th class="py-2 px-3">Mobile</th>
+                    <th class="py-2 px-3">Joining Date</th>
+                    <th class="py-2 px-3">Completed Date</th>
+                    <th class="py-2 px-3">Payment-1</th>
+                    <th class="py-2 px-3">Payment-2</th>
+                    <th class="py-2 px-3">Payment-3</th>
+                    <th class="py-2 px-3">Total Fees</th>
+                    <th class="py-2 px-3">Balance Fees</th>
+                    <th class="py-2 px-3"> Completed Status</th>
+                    <th class="py-2 px-3">Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <button onclick="exportToExcel()"
+        class="mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-lg block mx-auto">
+        Download Excel
+    </button>
+ <script src="script.js"></script>
+
+</body>
+</html>
